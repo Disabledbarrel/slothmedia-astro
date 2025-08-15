@@ -1,16 +1,80 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Slothmedia</title>
-	</head>
-	<body>
-		<h1>Slothmedia</h1>
-	</body>
-</html>
+<BaseLayout>
+	<section class="landing">
+		<div class="img-overlay">
+			<div class="landing-inner">
+				<h2>
+					Connect<br />Your<br />Favorite<br />Music
+					<i class="fas fa-square-full"></i>
+				</h2>
+			</div>
+		</div>
+	</section>
+	<section class="information bg-white">
+		<h3>Why Slothmedia?</h3>
+		<div class="information-container-one">
+			<div class="icon-container">
+				<i class="fas fa-play-circle"></i>
+			</div>
+			<h4>Create your own lists</h4>
+			<p>Use music from many sources</p>
+		</div>
+		<div class="information-container-two">
+			<div class="icon-container">
+				<i class="fas fa-headphones"></i>
+			</div>
+			<h4>No commercial breaks</h4>
+			<p>Just enjoy the music</p>
+		</div>
+		<div class="information-container-three">
+			<div class="icon-container">
+				<i class="fas fa-user-friends"></i>
+			</div>
+			<h4>Share your experience</h4>
+			<p>Let friends see what you listen to</p>
+		</div>
+	</section>
+	<section class="concept bg-dark">
+		<img
+			class="concept-img"
+			src="img/vinyl_compressed.jpg"
+			alt="img of a record player"
+		/>
+		<div class="concept-text">
+			<h5>How it works</h5>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti
+				culpa, quod eius nesciunt vel aliquid tenetur, ad iusto consequatur sed
+				veniam architecto, harum officia cum quidem nemo iure eos.
+			</p>
+			<a
+				href="about.html"
+				class="btn btn-dark"
+				title="Read more about how Slothmedia works">Read more</a
+			>
+		</div>
+	</section>
+	<section class="about bg-primary">
+		<div class="about-text">
+			<h5>SlothMedia anywhere, anytime</h5>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti
+				culpa, quod eius nesciunt vel aliquid tenetur, ad iusto consequatur sed
+				veniam architecto, harum officia cum quidem nemo iure eos.
+			</p>
+			<a
+				href="about.html"
+				class="btn btn-dark"
+				title="Learn more about SlothMedia's app">Learn more</a
+			>
+		</div>
+		<img
+			class="about-img"
+			src="img/app_illustration.png"
+			alt="phone with slothmedia-app"
+		/>
+	</section>
+</BaseLayout>
