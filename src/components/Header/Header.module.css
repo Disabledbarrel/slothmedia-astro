@@ -1,0 +1,52 @@
+.mainHeader {
+	width: 100%;
+	background-color: var(--color-primary);
+	color: var(--color-text);
+	margin-bottom: var(--space-md);
+
+	a {
+		color: var(--color-text);
+	}
+}
+
+.headerInner {
+	max-width: 1500px;
+	margin: auto auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 0 3rem;
+}
+
+.headerInner div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.headerInner div img {
+	width: 80px;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0.5rem;
+}
+
+.headerInner div a {
+	margin: auto auto;
+}
+
+.headerInner div h1 {
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	text-align: center;
+	margin: auto auto;
+	padding-left: 10px;
+}
