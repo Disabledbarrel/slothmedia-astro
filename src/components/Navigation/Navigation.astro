@@ -20,13 +20,13 @@
 	}
 
 	.nav-links a {
-		color: white;
+		color: var(--color-secondary);
 		text-decoration: none;
 		transition: color 0.2s;
 	}
 
 	.nav-links a:hover {
-		color: #38bdf8; /* sky-400 */
+		color: var(--color-accent); /* sky-400 */
 	}
 
 	/* Hamburger button */
@@ -34,7 +34,7 @@
 		font-size: 1.5rem;
 		background: none;
 		border: none;
-		color: white;
+		color: var(--color-secondary);
 		cursor: pointer;
 		display: none; /* hidden by default */
 	}
@@ -43,28 +43,33 @@
 	@media (max-width: 768px) {
 		.menu-toggle {
 			display: block; /* show hamburger */
+			width: 60px;
+			padding: 0;
 		}
 		.backdrop {
 			position: fixed;
-			inset: 0; /* covers the whole screen */
-			background: rgba(0, 0, 0, 0.4); /* semi-transparent dark overlay */
-			backdrop-filter: blur(4px); /* blur the background */
+			inset: 0;
+			background: rgba(0, 0, 0, 0.4);
+			backdrop-filter: blur(4px);
 			opacity: 0;
-			pointer-events: none; /* don't block clicks when hidden */
-			transition: opacity 0.3s ease;
-			z-index: 500; /* put it above content but below the menu */
-			height: 100vh;
+			visibility: hidden; /* instead of display:none */
+			transition:
+				opacity 0.3s ease,
+				visibility 0s linear 0.3s;
+			z-index: 500;
+			top: 80px;
 		}
 
 		.backdrop.open {
 			opacity: 1;
-			pointer-events: auto; /* now it catches clicks */
+			visibility: visible;
+			transition: opacity 0.3s ease;
 			top: 80px;
 		}
 
 		.nav-links {
 			position: absolute;
-			top: 60px;
+			top: 59px;
 			right: calc(var(--site-pad) * -1);
 			width: 100vw;
 			background: var(--color-secondary);
@@ -86,6 +91,11 @@
 		.nav-links.open {
 			max-height: 800px; /* pick a value tall enough for your links */
 			opacity: 1;
+		}
+
+		.nav-links a {
+			color: var(--color-primary);
+			text-decoration: none;
 		}
 	}
 </style>
