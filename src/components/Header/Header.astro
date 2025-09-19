@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import slothMediaLogo from "@images/slothmedia-logo.png";
 import Hamburger from "../Hamburger/Hamburger.astro";
 import Navigation from "../Navigation/Navigation.astro";
 
@@ -11,12 +10,7 @@ import styles from "@components/Header/Header.module.css";
 	<div class={styles.headerInner}>
 		<div class={styles.headerDiv}>
 			<a href="/" title="Go to landing page" class={styles.logoLink}>
-				<Image
-					src={slothMediaLogo}
-					alt="Slothmedia logotype"
-					width={40}
-					height={40}
-				/>
+				<img src="/assets/slothmedia-logo.png" alt="Slothmedia logotype" />
 			</a>
 			<h1 class={styles.siteTitle}>
 				<a href="/" title="Go to landing page">Slothmedia</a>
