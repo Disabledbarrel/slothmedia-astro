@@ -13,7 +13,7 @@ export default function LoginForm() {
 
 		const res = await fetch("https://play.purestyle.se/api/login", {
 			method: "POST",
-			body: JSON.stringify(data),
+			body: `username=${data.username}&password=${data.password}`,
 			headers: { "Content-Type": "application/json" },
 		});
 

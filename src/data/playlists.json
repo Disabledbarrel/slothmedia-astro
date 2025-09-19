@@ -1,0 +1,32 @@
+[
+	{
+		"id": "playlist1",
+		"name": "Chill Vibes",
+		"tracks": [
+			{
+				"id": "track1",
+				"source": "youtube",
+				"title": "Lofi Hip Hop",
+				"url": "https://www.youtube.com/watch?v=5qap5aO4i9A"
+			},
+			{
+				"id": "track2",
+				"source": "spotify",
+				"title": "Relaxing Beats",
+				"url": "https://open.spotify.com/track/xyz123"
+			}
+		]
+	},
+	{
+		"id": "playlist2",
+		"name": "Workout Mix",
+		"tracks": [
+			{
+				"id": "track3",
+				"source": "other",
+				"title": "Pump It Up",
+				"url": "https://example.com/pump-it-up.mp3"
+			}
+		]
+	}
+]

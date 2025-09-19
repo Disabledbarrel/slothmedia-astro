@@ -1,8 +1,23 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import playlists from "../../data/playlists.json";
+
+export async function getStaticPaths() {
+	return playlists.map((playlist) => ({
+		params: { id: playlist.id },
+		props: { playlist }, // pass playlist data into the page
+	}));
+}
+
+// Props injected from getStaticPaths
+const { playlist } = Astro.props;
+
+if (!playlist) {
+	return Astro.redirect("/dashboard");
+}
 ---
 
-<BaseLayout title="About">
-	<h2>Playlist Title</h2>
+<BaseLayout title={playlist.name}>
+	<h2>{playlist.name}</h2>
 	<p>To be announced....</p>
 </BaseLayout>
