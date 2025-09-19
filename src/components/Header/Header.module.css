@@ -2,7 +2,6 @@
 	width: 100%;
 	background-color: var(--color-primary);
 	color: var(--color-text);
-	margin-bottom: var(--space-md);
 
 	a {
 		color: var(--color-text);

@@ -111,3 +111,28 @@ body {
 /* =========================
    4. Index page
    ========================= */
+.landing {
+	display: grid;
+	grid-template-columns: 1fr 300px;
+}
+.slogan {
+	position: relative;
+}
+.slogan-container {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-size: 32px;
+	font-weight: bold;
+}
+.landing img {
+	grid-column: 2;
+}
+/* Mobile */
+@media (max-width: 768px) {
+	.landing {
+		grid-template-columns: 1fr 200px;
+	}
+}

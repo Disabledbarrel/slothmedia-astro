@@ -5,14 +5,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
 	<main class="container">
 		<section class="landing">
-			<div class="img-overlay">
-				<div class="landing-inner">
-					<h2>
-						Connect<br />Your<br />Favorite<br />Music
-						<i class="fas fa-square-full"></i>
-					</h2>
+			<div class="slogan">
+				<div class="slogan-container">
+					<p>Connect</p>
+					<p>Your</p>
+					<p>Favorite</p>
+					<p>Music</p>
 				</div>
 			</div>
+			<img
+				class="concept-img"
+				src="/assets/sloth-music.png"
+				alt="sloth listening to music"
+			/>
 		</section>
 		<section class="information bg-white">
 			<h3>Why Slothmedia?</h3>
@@ -32,11 +37,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			</div>
 		</section>
 		<section class="concept bg-dark">
-			<img
-				class="concept-img"
-				src="img/vinyl_compressed.jpg"
-				alt="img of a record player"
-			/>
 			<div class="concept-text">
 				<h5>How it works</h5>
 				<p>
