@@ -127,9 +127,31 @@ body {
 	font-size: 32px;
 	font-weight: bold;
 }
+.slogan-container i {
+	color: var(--color-accent);
+	margin-left: var(--space-xs);
+}
 .landing img {
 	grid-column: 2;
 }
+.information {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+	background: var(--color-primary);
+	text-align: center;
+	padding: var(--space-md);
+	margin-bottom: var(--space-md);
+}
+
+.information i {
+	margin-right: var(--space-xs);
+}
+
+.concept {
+	padding: var(--space-md);
+}
+
 /* Mobile */
 @media (max-width: 768px) {
 	.landing {
