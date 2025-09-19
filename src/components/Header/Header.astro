@@ -7,7 +7,7 @@ import styles from "@components/Header/Header.module.css";
 ---
 
 <header class={styles.mainHeader}>
-	<div class={styles.headerInner}>
+	<div class={`container ${styles.headerInner}`}>
 		<div class={styles.headerDiv}>
 			<a href="/" title="Go to landing page" class={styles.logoLink}>
 				<img src="/assets/slothmedia-logo.png" alt="Slothmedia logotype" />
@@ -17,7 +17,6 @@ import styles from "@components/Header/Header.module.css";
 			</h1>
 		</div>
 		<nav aria-label="Main navigation">
-			<Hamburger />
 			<Navigation />
 		</nav>
 	</div>

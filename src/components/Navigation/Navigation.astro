@@ -1,9 +1,107 @@
 ---
-import styles from "@components/Navigation/Navigation.module.css";
+
 ---
 
-<div class={styles.navLinks}>
+<button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+	☰
+</button>
+
+<div id="backdrop" class="backdrop"></div>
+
+<div class="nav-links" id="nav-links">
 	<a href="/login" title="Go to the log in page">Log in</a>
 	<a href="/register" title="Go to the register page">Register</a>
 	<a href="/about" title="Go to the register page">About</a>
 </div>
+<style>
+	.nav-links {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.nav-links a {
+		color: white;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.nav-links a:hover {
+		color: #38bdf8; /* sky-400 */
+	}
+
+	/* Hamburger button */
+	.menu-toggle {
+		font-size: 1.5rem;
+		background: none;
+		border: none;
+		color: white;
+		cursor: pointer;
+		display: none; /* hidden by default */
+	}
+
+	/* Mobile */
+	@media (max-width: 768px) {
+		.menu-toggle {
+			display: block; /* show hamburger */
+		}
+		.backdrop {
+			position: fixed;
+			inset: 0; /* covers the whole screen */
+			background: rgba(0, 0, 0, 0.4); /* semi-transparent dark overlay */
+			backdrop-filter: blur(4px); /* blur the background */
+			opacity: 0;
+			pointer-events: none; /* don't block clicks when hidden */
+			transition: opacity 0.3s ease;
+			z-index: 500; /* put it above content but below the menu */
+			height: 100vh;
+		}
+
+		.backdrop.open {
+			opacity: 1;
+			pointer-events: auto; /* now it catches clicks */
+			top: 80px;
+		}
+
+		.nav-links {
+			position: absolute;
+			top: 60px;
+			right: calc(var(--site-pad) * -1);
+			width: 100vw;
+			background: var(--color-secondary);
+			flex-direction: column;
+			gap: var(--space-lg);
+			padding: var(--space-md);
+
+			/* start hidden */
+			max-height: 0;
+			opacity: 0;
+			overflow: hidden;
+
+			transition:
+				max-height 0.5s ease,
+				opacity 0.01s ease;
+			z-index: 1000; /* above backdrop */
+		}
+
+		.nav-links.open {
+			max-height: 800px; /* pick a value tall enough for your links */
+			opacity: 1;
+		}
+	}
+</style>
+<script>
+	const toggleBtn = document.getElementById("menu-toggle");
+	const navLinks = document.getElementById("nav-links");
+	const backdrop = document.getElementById("backdrop");
+
+	toggleBtn?.addEventListener("click", () => {
+		navLinks?.classList.toggle("open");
+		backdrop?.classList.toggle("open");
+	});
+
+	// close when clicking backdrop
+	backdrop?.addEventListener("click", () => {
+		navLinks?.classList.remove("open");
+		backdrop?.classList.remove("open");
+	});
+</script>
